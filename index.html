@@ -12,21 +12,20 @@
 </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ashley Samuel Butcher | AI | Data Science | Technology | Systems Engineering | Consultant</title>
+  <title>Ashley Samuel Butcher | Technology & AI Consulting</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary-color: #0f172a;
-      --secondary-color: #475569;
-      --accent-color: #0a66c2;
-      --accent-hover: #004182;
-      --bg-color: #f8fafc;
-      --surface-color: #ffffff;
-      --border-color: #e2e8f0;
-      --text-main: #1e293b;
-      --text-muted: #64748b;
+      --primary: #002B5B; /* Deep corporate blue */
+      --secondary: #1A5F7A; /* Lighter teal-blue */
+      --accent: #FFC23C; /* Professional gold/yellow accent */
+      --text-dark: #2C3E50;
+      --text-light: #F9F9F9;
+      --bg-light: #F4F7F6;
+      --white: #FFFFFF;
+      --border: #E0E6ED;
     }
 
     * {
@@ -36,122 +35,243 @@
     }
 
     body {
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-main);
+      font-family: 'Open Sans', sans-serif;
+      color: var(--text-dark);
       line-height: 1.6;
-      padding: 40px 20px;
+      background-color: var(--bg-light);
       -webkit-font-smoothing: antialiased;
     }
 
-    .container {
-      max-width: 1000px;
+    h1, h2, h3, h4 {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--primary);
+    }
+
+    /* Navbar */
+    header {
+      background-color: var(--white);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1200px;
       margin: 0 auto;
-      background: var(--surface-color);
-      padding: 40px;
-      border-radius: 16px;
-      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    }
-
-    .profile-header {
+      padding: 20px;
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 32px;
-      margin-bottom: 40px;
-      padding-bottom: 30px;
-      border-bottom: 1px solid var(--border-color);
     }
 
-    .profile-image-container {
-      flex-shrink: 0;
-    }
-
-    .profile-header img {
-      border-radius: 50%;
-      width: 180px;
-      height: 180px;
-      object-fit: cover;
-      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-      border: 4px solid var(--surface-color);
-      background-color: var(--surface-color);
-    }
-
-    .profile-info {
-      flex-grow: 1;
-    }
-
-    h1 {
-      font-size: 2.25rem;
+    .logo {
+      font-size: 1.25rem;
       font-weight: 700;
-      color: var(--primary-color);
-      margin-bottom: 8px;
+      color: var(--primary);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+    }
+
+    .logo span {
+      color: var(--secondary);
+    }
+
+    .nav-links a {
+      margin-left: 30px;
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--secondary);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: var(--white);
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      color: var(--white);
+      font-size: 3rem;
+      margin-bottom: 20px;
       line-height: 1.2;
     }
 
-    h2 {
-      font-size: 1.125rem;
-      font-weight: 500;
-      color: var(--secondary-color);
-      margin-bottom: 16px;
-      letter-spacing: -0.01em;
+    .hero p {
+      font-size: 1.2rem;
+      font-weight: 300;
+      margin-bottom: 40px;
+      opacity: 0.9;
     }
 
-    .bio p {
-      margin-bottom: 12px;
-      color: var(--secondary-color);
-      font-size: 1rem;
-    }
-
-    .bio p:last-of-type {
-      margin-bottom: 0;
-    }
-
-    .action-links {
-      margin-top: 24px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: var(--accent-color);
-      color: white;
+    .btn-primary {
+      display: inline-block;
+      background-color: var(--accent);
+      color: var(--primary);
+      padding: 15px 30px;
+      border-radius: 4px;
       text-decoration: none;
-      border-radius: 8px;
-      font-weight: 500;
-      font-size: 0.95rem;
-      transition: background-color 0.2s, transform 0.1s;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
 
-    .btn:hover {
-      background-color: var(--accent-hover);
-    }
-    
-    .btn:active {
-      transform: scale(0.98);
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(255, 194, 60, 0.4);
     }
 
-    .btn svg {
-      width: 18px;
-      height: 18px;
-      margin-right: 8px;
-      fill: currentColor;
-    }
-
-    .section-title {
-      font-size: 1.5rem;
+    .btn-secondary {
+      display: inline-block;
+      background-color: transparent;
+      color: var(--white);
+      border: 2px solid var(--white);
+      padding: 13px 30px;
+      border-radius: 4px;
+      text-decoration: none;
       font-weight: 600;
-      color: var(--primary-color);
-      margin: 0 0 24px 0;
-      display: flex;
-      align-items: center;
+      font-size: 1rem;
+      margin-left: 15px;
+      transition: background-color 0.3s, color 0.3s;
     }
-    
-    .table-container {
-      overflow-x: auto;
+
+    .btn-secondary:hover {
+      background-color: var(--white);
+      color: var(--primary);
+    }
+
+    /* Main Container */
+    .section {
+      padding: 80px 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-header h2 {
+      font-size: 2.25rem;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 15px;
+    }
+
+    .section-header h2::after {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 4px;
+      background-color: var(--accent);
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* About Section */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 50px;
+      align-items: center;
+      background: var(--white);
+      padding: 40px;
       border-radius: 8px;
-      border: 1px solid var(--border-color);
-      box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+
+    .about-image img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .about-content h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .about-content h4 {
+      font-size: 1rem;
+      color: var(--secondary);
+      font-weight: 600;
+      margin-bottom: 25px;
+    }
+
+    .about-content p {
+      margin-bottom: 15px;
+      color: #555;
+    }
+
+    /* Expertise Section */
+    .bg-light {
+      background-color: var(--bg-light);
+    }
+    .bg-white {
+      background-color: var(--white);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      background: var(--white);
+      padding: 40px 30px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+      border-top: 4px solid var(--secondary);
+      transition: transform 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .service-icon {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 15px;
+    }
+
+    .service-card p {
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    /* Experience Table */
+    .table-responsive {
+      overflow-x: auto;
+      background: var(--white);
+      border-radius: 8px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
     }
 
     table {
@@ -161,142 +281,214 @@
     }
 
     th {
-      background-color: #f8fafc;
-      color: var(--secondary-color);
-      font-weight: 600;
-      font-size: 0.875rem;
+      background-color: var(--primary);
+      color: var(--white);
+      padding: 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      padding: 16px;
-      border-bottom: 1px solid var(--border-color);
+      letter-spacing: 1px;
+      white-space: nowrap;
     }
 
     td {
-      padding: 16px;
-      border-bottom: 1px solid var(--border-color);
-      color: var(--text-main);
-      font-size: 0.95rem;
+      padding: 20px;
+      border-bottom: 1px solid var(--border);
       vertical-align: top;
-    }
-    
-    td:first-child {
-      font-weight: 500;
-      white-space: nowrap;
-      color: var(--primary-color);
+      font-size: 0.95rem;
     }
 
-    tbody tr {
-      transition: background-color 0.15s ease;
+    td:first-child {
+      font-weight: 600;
+      color: var(--primary);
+      width: 15%;
+    }
+
+    td:nth-child(2) {
+      width: 45%;
+      color: #444;
+    }
+
+    td:nth-child(3) {
+      width: 40%;
+      color: #666;
+      font-size: 0.85rem;
     }
 
     tbody tr:hover {
-      background-color: #f1f5f9;
+      background-color: #F8FAFC;
     }
 
     tbody tr:last-child td {
       border-bottom: none;
     }
 
+    /* Footer */
+    footer {
+      background-color: var(--primary);
+      color: var(--white);
+      padding: 40px 20px;
+      text-align: center;
+    }
+    
+    footer p {
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 900px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+      .about-image {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+    }
+
     @media (max-width: 768px) {
-      body {
-        padding: 20px 10px;
+      .hero h1 {
+        font-size: 2rem;
       }
-      
-      .container {
-        padding: 24px;
+      .nav-links {
+        display: none; /* simple mobile handling */
       }
-
-      .profile-header {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
+      .btn-secondary {
+        margin-left: 0;
+        margin-top: 15px;
+        display: block;
       }
-
-      h1 {
-        font-size: 1.75rem;
-      }
-
-      h2 {
-        font-size: 1rem;
-      }
-      
-      .bio p {
-        text-align: left;
+      .btn-primary {
+        display: block;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="profile-header">
-      <div class="profile-image-container">
-        <img src="profile.jpeg" alt="Ashley Samuel Butcher - Profile Image">
+
+  <!-- Navbar -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo">ASB <span>Consulting</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#track-record">Track Record</a>
+        <a href="https://www.linkedin.com/in/ashleysbutcher/" target="_blank">Contact</a>
       </div>
-      <div class="profile-info">
-        <h1>Ashley Samuel Butcher, PhD, MEng</h1>
-        <h2>AI | Data Science | Technology | Systems Engineering</h2>
-        <div class="bio">
-          <p>Consultant, manager, applied scientist and engineer with an interest in researching and developing information driven technologies, products and services.</p>
-          <p>Experienced in delivering R&D and product development consulting services to early-stage, angel- and venture-backed start-ups in the UK and US.</p>
-          <p>Over a decade of experience specialising in researching, developing, and optimising edge & cloud systems leveraging artificial intelligence, machine learning, computer vision, and statistical signal processing.</p>
-          <p>Early career experience with low power electronic system design and embedded firmware.</p>
-          <p>Experience working in global & interdisciplinary teams; negotiating technical contracts; managing R&D projects; managing, mentoring and teaching junior colleagues and students. Experience attending international conferences, trade shows, networking events, selling technical projects and supervising students.</p>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Strategic Engineering & AI Consulting</h1>
+      <p>Delivering R&D, product development, and applied science solutions to early-stage, venture-backed start-ups, and enterprise clients worldwide.</p>
+      <a href="#expertise" class="btn-primary">Explore Services</a>
+      <a href="https://www.linkedin.com/in/ashleysbutcher/" target="_blank" class="btn-secondary">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section bg-light">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image">
+          <img src="profile.jpeg" alt="Ashley Samuel Butcher, PhD, MEng">
         </div>
-        <div class="action-links">
-          <a class="btn" href="https://www.linkedin.com/in/ashleysbutcher/" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-            Connect on LinkedIn
-          </a>
+        <div class="about-content">
+          <h3>Ashley Samuel Butcher, PhD, MEng</h3>
+          <h4>Principal Consultant | Applied Scientist & Engineer</h4>
+          <p>As a consultant, manager, and applied scientist, I specialize in researching and developing information-driven technologies, products, and services.</p>
+          <p>With over a decade of experience, my core focus lies in researching, developing, and optimizing edge & cloud systems leveraging artificial intelligence, machine learning, computer vision, and statistical signal processing.</p>
+          <p>I have extensive experience working in global and interdisciplinary teams, negotiating technical contracts, and managing high-stakes R&D projects. My background spans from low-power electronic system design and embedded firmware to deploying multi-LLM systems for enterprise applications.</p>
+          <p>Beyond technical execution, I am experienced in mentoring junior colleagues, attending international conferences, selling technical projects, and guiding organizations through complex technical due diligence.</p>
         </div>
       </div>
     </div>
+  </section>
 
-    <div>
-      <h2 class="section-title">R&D Experience</h2>
-      <div class="table-container">
+  <!-- Expertise Section -->
+  <section id="expertise" class="section bg-white">
+    <div class="container">
+      <div class="section-header">
+        <h2>Core Capabilities</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🧠</div>
+          <h3>Artificial Intelligence & ML</h3>
+          <p>Applied research to deployed services, including multi-LLM systems, generative AI architectures, and optimization of perception neural networks for Autonomous Drive & ADAS.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">☁️</div>
+          <h3>Cloud & Edge Systems</h3>
+          <p>Architecting and optimizing edge and cloud computer vision and machine learning for sports, health, and wellness applications using AWS, GCP, and Azure.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">👁️</div>
+          <h3>Computer Vision</h3>
+          <p>Real-time multi-spectral image fusion, HDR-to-SDR conversion, and non-invasive physiological monitoring utilizing statistical signal processing.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">⚡</div>
+          <h3>Systems Engineering & Firmware</h3>
+          <p>Embedded firmware, electronic design, and sensor integration for consumer health devices, wearable medical technologies, and research instrumentation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Track Record Section -->
+  <section id="track-record" class="section bg-light">
+    <div class="container">
+      <div class="section-header">
+        <h2>Track Record & Project Portfolio</h2>
+      </div>
+      <div class="table-responsive">
         <table>
           <thead>
             <tr>
               <th>Sector</th>
-              <th>Project</th>
-              <th>Tools / Services / Platforms / Languages</th>
+              <th>Project Scope</th>
+              <th>Technologies & Platforms</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>Technology</td>
               <td>Technical due diligence for series A investment in consumer medical start-up</td>
-              <td></td>
+              <td>Strategic Analysis, Due Diligence</td>
             </tr>
             <tr>
               <td>Enterprise SaaS</td>
               <td>Proof-of-principle market demand model for IP portfolio</td>
-              <td>Python, Javascript, HTML, CSS, AZURE, COSMOS DB, Azure Functions, Azure API Management, AI Foundry, AWS, Amazon Bedrock, PostgreSQL, FastAPI, git</td>
+              <td>Python, Javascript, HTML, CSS, AZURE, COSMOS DB, Azure Functions, AI Foundry, AWS, Amazon Bedrock, PostgreSQL, FastAPI</td>
             </tr>
             <tr>
               <td>Enterprise SaaS</td>
               <td>Applied research to deployed service for multi-LLM system for enterprise application</td>
-              <td>Python, HTML, GCP, OpenAI APIs, Anthropic APIs, Sentry, Terraform, Cloud Run Functions, PyTest, git</td>
+              <td>Python, HTML, GCP, OpenAI APIs, Anthropic APIs, Sentry, Terraform, Cloud Run Functions, PyTest</td>
             </tr>
             <tr>
               <td>Enterprise SaaS</td>
               <td>Evaluation of solution architectures for enterprise generative AI service (NLP)</td>
-              <td>Python, AWS, Together.AI APIs, OpenAI APIs, Vectara, Scipy, GCP, git</td>
+              <td>Python, AWS, Together.AI APIs, OpenAI APIs, Vectara, Scipy, GCP</td>
             </tr>
             <tr>
               <td>Consumer</td>
               <td>Edge and cloud computer vision and machine learning for a variety of sports, health and wellness applications</td>
-              <td>AWS S3, EC2, git, OpenCV, TensorFlow, PyTorch, Nvidia GPUs</td>
+              <td>AWS S3, EC2, OpenCV, TensorFlow, PyTorch, Nvidia GPUs</td>
             </tr>
             <tr>
               <td>Industrial</td>
               <td>Real-time multi-spectral image fusion for machine vision/security</td>
-              <td>C++, OpenCV, eBUS SDK, Ubuntu, x86, Make, CMake, git</td>
+              <td>C++, OpenCV, eBUS SDK, Ubuntu, x86, Make, CMake</td>
             </tr>
             <tr>
               <td>Consumer</td>
               <td>HDR-to-SDR conversion for set-top box/smart tv</td>
-              <td>C, Python, MATLAB, Flask, x86, Ubuntu, AWS, ffmpeg, git, Make</td>
+              <td>C, Python, MATLAB, Flask, x86, Ubuntu, AWS, ffmpeg, Make</td>
             </tr>
             <tr>
               <td>Semiconductor</td>
@@ -326,12 +518,12 @@
             <tr>
               <td>Medical</td>
               <td>Computer vision and statistical signal processing for non-invasive physiological monitoring</td>
-              <td>C, C++, Python, x86, Ubuntu, Windows, ffmpeg, git, GCC, MSVC, eBUS SDK</td>
+              <td>C, C++, Python, x86, Ubuntu, Windows, ffmpeg, GCC, MSVC, eBUS SDK</td>
             </tr>
             <tr>
               <td>Consumer</td>
               <td>Embedded firmware and system design for consumer health and wellness device</td>
-              <td>C, Python, Objective-C, Java, iOS, Android, ARM Cortex-M0, git, EAGLE</td>
+              <td>C, Python, Objective-C, Java, iOS, Android, ARM Cortex-M0, EAGLE</td>
             </tr>
             <tr>
               <td>Research</td>
@@ -347,7 +539,14 @@
         </table>
       </div>
     </div>
+  </section>
 
-  </div>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Ashley Samuel Butcher Consulting. All rights reserved.</p>
+    </div>
+  </footer>
+
 </body>
 </html>
