@@ -9,13 +9,13 @@
 }
 
 :root {
-  --bg:        #0d0f14;       /* page background */
-  --bg-card:   #13161e;       /* card / surface background */
-  --border:    rgba(255, 255, 255, 0.08);
-  --accent:    #6c8cff;       /* indigo */
-  --accent2:   #a78bfa;       /* violet */
-  --text:      #e8eaf0;       /* primary text */
-  --muted:     #8b91a8;       /* secondary / muted text */
+  --bg:        #050c1a;       /* page background — deep navy */
+  --bg-card:   #0a1628;       /* card / surface background */
+  --border:    rgba(100, 160, 255, 0.1);
+  --accent:    #3b82f6;       /* cobalt blue */
+  --accent2:   #60b8ff;       /* sky blue */
+  --text:      #dde8f8;       /* primary text */
+  --muted:     #7a95bb;       /* secondary / muted text */
   --radius:    14px;
   --nav-h:     64px;          /* fixed navigation height */
 }
@@ -48,7 +48,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 0 clamp(20px, 5vw, 60px);
-  background: rgba(13, 15, 20, 0.85);
+  background: rgba(5, 12, 26, 0.85);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
 }
@@ -115,7 +115,7 @@ nav {
   background:
     linear-gradient(var(--bg-card), var(--bg-card)) padding-box,
     linear-gradient(135deg, var(--accent), var(--accent2)) border-box;
-  box-shadow: 0 0 60px rgba(108, 140, 255, 0.2);
+  box-shadow: 0 0 60px rgba(59, 130, 246, 0.25);
 }
 
 .hero-eyebrow {
@@ -175,7 +175,7 @@ nav {
   font-size: 0.9rem;
   text-decoration: none;
   transition: opacity 0.2s, transform 0.2s;
-  box-shadow: 0 4px 24px rgba(108, 140, 255, 0.35);
+  box-shadow: 0 4px 24px rgba(59, 130, 246, 0.4);
 }
 
 .hero-cta:hover {
@@ -278,9 +278,9 @@ hr.divider {
 }
 
 .project-card:hover {
-  border-color: rgba(108, 140, 255, 0.4);
+  border-color: rgba(59, 130, 246, 0.45);
   transform: translateY(-3px);
-  box-shadow: 0 12px 40px rgba(108, 140, 255, 0.1);
+  box-shadow: 0 12px 40px rgba(59, 130, 246, 0.12);
 }
 
 .card-sector {
